@@ -15,7 +15,46 @@ isValidPassword('joao.telles', '191000');
 
 //Function Challenge 2
 
+function averageArr(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum = + array[i];
+    }
+    const average = sum / array.length;
+    return average;
+}
 
+averageArr([0, 50]);
 
+// Function Challenge 3
 
+function isPangram(string) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    for (let char of alphabet) {
+        if (string.indexOf(char) === -1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+isPangram('the wuick brown fox jumps over the lazy dog');
+
+// Function Challeng 4
+
+function getCard() {
+
+    const randomValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+    const randomSuit = ['clubs', 'spades', 'hearts', 'diamonds']; 
+
+    const randomNumber = Math.floor(Math.random() * (13 - 0 + 1) + 0);
+    const randomNumber2 = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+
+    const object = {
+        value: randomValue[randomNumber],
+        suit: randomSuit[randomNumber2]
+    }
+
+    return object;
+}
 
