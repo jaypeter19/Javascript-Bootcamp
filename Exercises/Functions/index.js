@@ -40,7 +40,7 @@ function isPangram(string) {
 
 isPangram('the wuick brown fox jumps over the lazy dog');
 
-// Function Challeng 4
+// Function Challenge 4
 
 function getCard() {
 
@@ -57,4 +57,3 @@ function getCard() {
 
     return object;
 }
-
