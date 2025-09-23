@@ -38,7 +38,7 @@ function isPangram(string) {
     return true;
 }
 
-isPangram('the wuick brown fox jumps over the lazy dog');
+isPangram('the wick brown fox jumps over the lazy dog');
 
 // Function Challenge 4
 
