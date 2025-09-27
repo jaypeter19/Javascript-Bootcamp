@@ -57,3 +57,22 @@ function getCard() {
 
     return object;
 }
+
+
+// Keyword this example
+
+function sayHi() {
+    console.log('Hi');
+    // The keyword this refers to the windows global object in this scenario. This always return an object
+    console.log(this);
+}
+
+
+const person = {
+    first: "Cherylin", 
+    last: "Sarkisian",
+    nickname: "Cher", 
+    fullName() {
+        console.log(`${this.first} ${this.last} ${this.nickname}`);
+    }
+}
