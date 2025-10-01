@@ -45,7 +45,7 @@ isPangram('the wick brown fox jumps over the lazy dog');
 function getCard() {
 
     const randomValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
-    const randomSuit = ['clubs', 'spades', 'hearts', 'diamonds']; 
+    const randomSuit = ['clubs', 'spades', 'hearts', 'diamonds'];
 
     const randomNumber = Math.floor(Math.random() * (13 - 0 + 1) + 0);
     const randomNumber2 = Math.floor(Math.random() * (3 - 0 + 1) + 0);
@@ -69,10 +69,52 @@ function sayHi() {
 
 
 const person = {
-    first: "Cherylin", 
+    first: "Cherylin",
     last: "Sarkisian",
-    nickname: "Cher", 
+    nickname: "Cher",
     fullName() {
         console.log(`${this.first} ${this.last} ${this.nickname}`);
     }
 }
+
+// Deck of Cards exercise 
+
+const myDeck = {
+    deck: [],
+    drawnCards: [],
+    suits: ['hearts', 'diamonds', 'spades', 'clubs'],
+    values: '2,3,4,5,6,7,8,9,10,J,Q,K,A',
+    initializeDeck() {
+        const { suits, values, deck } = this;
+        for (let value of values.split(',')) {
+            for (let suit of suits) {
+                deck.push({ value, suit })
+            }
+        }
+        // return deck;
+    },
+    drawCard() {
+        const card = this.deck.pop();
+        this.drawnCards.push(card);
+        return card;
+    },
+    drawMultiple(numCards) {
+        const cards = []
+        for (let i = 0; i < numCards; i++) {
+            cards.push(this.drawCard());
+        }
+        return cards;
+    },
+    shuffle() {
+        const {deck} = this;
+        // Loop over array backwards
+        for (let i = deck.length - 1; i > 0; i--) {
+            //Pick random index before current value
+            let j = Math.floor(Math.random() * (i + 1));
+            //swap 
+            [deck[i], deck[j]] = [deck[j], deck[i]];
+        }
+    }
+}
+
+
