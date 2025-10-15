@@ -1,10 +1,10 @@
-const createAutoComplete = ({ root, renderOption, onOptionSelect, inputValue, fetchData }) => {
+const createAutoComplete = ({ root, renderOption, onOptionSelect, inputSearch, inputValue, fetchData }) => {
 
     //Get Autocomplete general div
     const autocomplete = root;
 
     //Select the input
-    const input = document.querySelector('input');
+    const input = inputSearch;
 
     const onInput = async (event) => {
         const items = await fetchData(event.target.value);

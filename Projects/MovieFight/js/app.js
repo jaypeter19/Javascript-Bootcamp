@@ -1,6 +1,4 @@
-
-createAutoComplete({
-    root: document.querySelector('.autocomplete'),
+const autoCompleteConfig = {
     renderOption(movie) {
         const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
         return `
@@ -9,9 +7,6 @@ createAutoComplete({
             <p>${movie.Title} (${movie.Year})</p>
             </a>
         `;
-    },
-    onOptionSelect(movie) {
-        onMovieSelect(movie)
     },
     inputValue(movie) {
         return movie.Title;
@@ -30,10 +25,28 @@ createAutoComplete({
 
         return response.data.Search;
     }
+};
+
+
+createAutoComplete({
+    ...autoCompleteConfig,
+    root: document.querySelector('#autocomplete-left'),
+    inputSearch:  document.querySelector('#search1'),
+    onOptionSelect(movie) {
+        onMovieSelect(movie, document.querySelector('#summary-left'))
+    }
 });
 
+createAutoComplete({
+    ...autoCompleteConfig,
+    root: document.querySelector('#autocomplete-right'),
+    inputSearch: document.querySelector('#search2'),
+    onOptionSelect(movie) {
+        onMovieSelect(movie, document.querySelector('#summary-right'))
+    }
+});
 
-const onMovieSelect = async (movie) => {
+const onMovieSelect = async (movie, summaryElement) => {
     const response = await axios.get('http://www.omdbapi.com/', {
         params: {
             apiKey: '48dfa140',
@@ -41,7 +54,7 @@ const onMovieSelect = async (movie) => {
         }
     });
 
-    document.querySelector('#summary').innerHTML = movieTemplate(response.data);
+    summaryElement.innerHTML = movieTemplate(response.data);
 }
 
 
@@ -56,27 +69,26 @@ const movieTemplate = (movieDetails) => {
                         <p>${movieDetails.Genre}</p>
                         <p>${movieDetails.Plot}</p>
                     </div>
-                    <div class="col-sm-12 my-2 p-3 text-bg-success">
+                    <div class="col-sm-10 my-2 p-3 text-bg-success">
                         <h4>${movieDetails.Awards}</h4>
                         <p>Awards</p>
                     </div>
-                    <div class="col-sm-12 my-2 p-3 text-bg-success">
+                    <div class="col-sm-10 my-2 p-3 text-bg-success">
                         <h4>${movieDetails.BoxOffice}</h4>
                         <p>Box Office</p>
                     </div>
-                    <div class="col-sm-12 my-2 p-3 text-bg-success">
+                    <div class="col-sm-10 my-2 p-3 text-bg-success">
                         <h4>${movieDetails.Metascore}</h4>
                         <p>Metascore</p>
                     </div>
-                    <div class="col-sm-12 my-2 p-3 text-bg-success">
+                    <div class="col-sm-10 my-2 p-3 text-bg-success">
                         <h4>${movieDetails.imdbRating}</h4>
                         <p>IMDB Rating</p>
                     </div>
-                    <div class="col-sm-12 my-2 p-3 text-bg-success">
+                    <div class="col-sm-10 my-2 p-3 text-bg-success">
                         <h4>${movieDetails.imdbVotes}</h4>
                         <p>IMDB Votes</p>
                     </div>
-
-    </div>
-    `;
+            </div>
+            `;
 }
