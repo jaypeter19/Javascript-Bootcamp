@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const util = require('util');
 
-const chalk = require('chalk');
+import fs from 'fs';
+import util from 'util';
+
+import chalk from 'chalk';
 
 
 // Method #2
@@ -31,7 +32,7 @@ fs.readdir(process.cwd(), async (err, filenames) => {
     if (stats.isFile()) {
         console.log(filenames[index]);
     } else {
-        console.log(chalk.bold(filenames[index]));
+        console.log(chalk.green(filenames[index]));
     }
   }
 
