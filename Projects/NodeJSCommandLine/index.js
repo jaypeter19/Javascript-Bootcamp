@@ -3,7 +3,7 @@
 
 import fs from 'fs';
 import util from 'util';
-import path from 'path'''
+import path from 'path';
 import chalk from 'chalk';
 
 
