@@ -3,7 +3,7 @@
 
 import fs from 'fs';
 import util from 'util';
-
+import path from 'path'''
 import chalk from 'chalk';
 
 
@@ -13,15 +13,17 @@ import chalk from 'chalk';
 // Method #3
 const { lstat } = fs.promises;
 
+const targetDir = process.argv[2] || process.cwd();
+
 // GOOD AND FINAL SOLUTION
 
-fs.readdir(process.cwd(), async (err, filenames) => {
+fs.readdir(targetDir, async (err, filenames) => {
   if (err) {
     throw new Error(err)
   }
 
   const statPromises = filenames.map(filename => {
-    return lstat(filename);
+    return lstat(path.join(targetDir, filename));
   })
 
   const allStats = await Promise.all(statPromises);
