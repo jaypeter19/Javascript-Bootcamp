@@ -18,7 +18,7 @@ router.post('/signup',
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
-            return res.send(signinTemplate({ req, errors }))
+            return res.send(signupTemplate({ req, errors }))
         }
 
         const { email, password, passwordConfirmation } = req.body;
