@@ -17,7 +17,6 @@ module.exports = ({ req, errors }) => {
                         <input type="password" class="form-control" id="password" name="password">
                         <div id="passwordHelp" class="form-text">${getError(errors, 'password')}</div>
                     </div>
-                    </div>
                     <div class="mb-3">
                         <label for="passwordConfirmation" class="form-label">Password
                             Confirmation</label>

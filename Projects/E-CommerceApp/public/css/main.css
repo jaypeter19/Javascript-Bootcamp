@@ -4,10 +4,15 @@ body {
     --white: #fbfbfb;
     --dark: #2e2532;
     --black: #201a23;
+    --red: #c4181e;
 }
 
 .bi{
     padding-right: 5px;
+}
+
+.form-text {
+    color: var(--red);
 }
 
 .product-card figure {

@@ -17,7 +17,7 @@ module.exports = ({ errors }) => {
                         <div id="passwordHelp" class="form-text">${getError(errors, 'password')}</div>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
-                    <div id="emailHelp" class="form-text"><a href="/signin">Need an account? Sign Up</a></div>
+                    <div id="emailHelp" class="form-text"><a href="/signup">Need an account? Sign Up</a></div>
                 </form>
     `});
 };

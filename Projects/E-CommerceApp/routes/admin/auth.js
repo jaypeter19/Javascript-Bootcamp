@@ -35,13 +35,14 @@ router.get('/signout', (req, res) => {
 });
 
 router.get('/signin', (req, res) => {
-    res.send(signinTemplate());
+    res.send(signinTemplate({req}));
 });
 
-router.post('/signin', [requireEmailExists, requireValidPasswordForUser], async (req, res) => {
+router.post('/signin', [requireEmailExists, requireValidPasswordForUser], 
+    async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.send(signinTemplate({ errors }))
+        return res.send(signinTemplate({ req, errors }))
     }
 
     const { email } = req.body;
