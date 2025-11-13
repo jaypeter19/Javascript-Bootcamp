@@ -5,33 +5,28 @@ module.exports = ({ req, errors }) => {
     return layout({
         content:
             `
-        <h1>${req.session.userId}</h1>
-        <form method="POST">
-                    <div class="row justify-content-center mb-3">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-6">
-                            <input type="email" class="form-control" id="email" name="email">
-                        </div>
-                        ${getError(errors, 'email')}
+        <h2 class="mb-3">Sign Up</h2>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                        <div id="emailHelp" class="form-text">${getError(errors, 'email')}</div>
                     </div>
-                    <div class="row justify-content-center mb-3">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-6">
-                            <input type="password" class="form-control" id="password" name="password">
-                        </div>
-                        ${getError(errors, 'password')}
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <div id="passwordHelp" class="form-text">${getError(errors, 'password')}</div>
                     </div>
-                    <div class="row justify-content-center mb-3">
-                        <label for="passwordConfirmation" class="col-sm-2 col-form-label">Password Confirmation</label>
-                        <div class="col-sm-6">
-                            <input type="password" class="form-control" id="passwordConfirmation"
-                                name="passwordConfirmation">
-                        </div>
-                        ${getError(errors, 'passwordConfirmation')}
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <div class="mb-3">
+                        <label for="passwordConfirmation" class="form-label">Password
+                            Confirmation</label>
+                        <input type="password" class="form-control" id="passwordConfirmation"
+                            name="passwordConfirmation" placeholder="Password Confirmation">
+                        <div id="passwordConfirmationHelp" class="form-text">${getError(errors, 'passwordConfirmation')}</div>
                     </div>
-        </form>
+                    <button type="submit" class="btn btn-success">Sign Up</button>
+                    <div id="signin" class="form-text"><a href="/signin">Have an account? Sign In</a></div>
+                </form>
     `});
 };

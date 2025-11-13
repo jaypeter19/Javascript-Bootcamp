@@ -4,24 +4,20 @@ const { getError } = require('../../helpers');
 module.exports = ({ errors }) => {
     return layout({
         content: `
-    <form method="POST">
-                    <div class="row justify-content-center mb-3">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-6">
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        ${getError(errors, 'email')}
+    <h2 class="mb-3">Sign In</h2>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                        <div id="emailHelp" class="form-text">${getError(errors, 'email')}</div>
                     </div>
-                    <div class="row justify-content-center mb-3">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-6">
-                            <input type="password" class="form-control" id="password" name="password">
-                        </div>
-                        ${getError(errors, 'password')}
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <div id="passwordHelp" class="form-text">${getError(errors, 'password')}</div>
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
-    </form>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <div id="emailHelp" class="form-text"><a href="/signin">Need an account? Sign Up</a></div>
+                </form>
     `});
 };
