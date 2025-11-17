@@ -4,16 +4,42 @@ module.exports = ({ products }) => {
 
     const renderedProducts = products.map((product) => {
         return `
-        <div>${product.title}</div>
+        <tr>
+        <th scope="row">${product.title}Title</th>
+        <td>${product.price}</td>
+        <td>
+            <a href="/admin/products/${product.id}/edit" class="btn btn-primary">
+                Edit
+            </a>
+        </td>
+        <td>
+            <a href="/admin/products/${product.id}/delete" class="btn btn-danger">
+                Delete
+            </a>
+        </td>
+        </tr>
         `
     }).join('');
 
     return layout({
         content:
             `
-        <h1>Products</div>
-        ${renderedProducts}
-    
+        <h2 class="mb-3">Products</h2v>
+        <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            ${renderedProducts}
+                        </tbody>
+                    </table>
+        </div>
     `
     });
 }

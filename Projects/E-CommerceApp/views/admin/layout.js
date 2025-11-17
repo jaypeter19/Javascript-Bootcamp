@@ -27,7 +27,7 @@ module.exports = ({ content }) => {
             </div>
         </div>
         <div class="row justify-content-center align-items-center mt-4">
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 ${content}
             </div>
         </div>
