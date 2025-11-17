@@ -3,14 +3,25 @@ const { getError } = require('../../helpers');
 
 module.exports = ({ errors }) => {
     return layout({
-        content: `
+        content:
+            `
+        <h2 class="mb-3">Create a Product</h2>
         <form method="POST" enctype="multipart/form-data">
-            <input placeholder="Title" name="title">
-            ${getError(errors, 'title')}
-            <input placeholder="Price" name="price">
-             ${getError(errors, 'price')}
-            <input type="file" name="image">
-            <button>Submit</button>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                <div id="titleHelp" class="form-text">${getError(errors, 'title')}</div>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" name="price" id="price" class="form-control" placeholder="Price">
+                <div id="priceHelp" class="form-text">${getError(errors, 'price')}</div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" name="image" id="image" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Create</button>
         </form>
         `
     })
