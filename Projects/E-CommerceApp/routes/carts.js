@@ -16,7 +16,6 @@ router.post('/cart/products', async (req, res) => {
         req.session.cartId = cart.id;
 
     } else {
-
         cart = await cartsRepo.getOne(req.session.cartId);
     }
 
