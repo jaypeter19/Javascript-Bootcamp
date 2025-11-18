@@ -20,7 +20,7 @@ module.exports = ({product}) => {
                 <label for="image" class="form-label">Image</label>
                 <input type="file" name="image" id="image" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Edit</button>
+            <button type="submit" class="btn btn-success">Save</button>
         </form>
         `
     })

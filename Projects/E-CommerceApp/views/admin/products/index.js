@@ -13,9 +13,11 @@ module.exports = ({ products }) => {
             </a>
         </td>
         <td>
-            <a href="/admin/products/${product.id}/delete" class="btn btn-danger">
+        <form method="POST" action="/admin/products/${product.id}/delete">
+            <button class="btn btn-danger">
                 Delete
-            </a>
+            </button>
+        </form>
         </td>
         </tr>
         `
