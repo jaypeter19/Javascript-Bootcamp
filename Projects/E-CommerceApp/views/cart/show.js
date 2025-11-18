@@ -1,6 +1,13 @@
 const layout = require('../layout');
 
 module.exports = ({ items }) => {
+
+    let totalPrice = 0;
+    for (const item of items) {
+        totalPrice += item.quantity * item.product.price;
+    }
+    
+
     const renderedItems = items.map((item) => {
         return `
         <div class="col-sm-12 bg-light p-3 mb-3">
@@ -9,8 +16,9 @@ module.exports = ({ items }) => {
                         <h4>${item.product.title}</h4>
                     </div>
                     <div class="col-sm-4 text-end">
-                        <p class="muted d-inline">$${item.product.price} X ${item.quantity} = <span>$39</span></p>
-                        <form method="POST" class="d-inline">
+                        <p class="muted d-inline">$${item.product.price} X ${item.quantity} = <span>$${item.product.price * item.quantity}</span></p>
+                        <form action="/cart/products/delete" method="POST" class="d-inline">
+                            <input type="hidden" value="${item.id}" name="itemId">
                             <button class="btn btn-danger">
                                 <i class="bi bi-x-square-fill"></i>
                             </button>
@@ -34,7 +42,7 @@ module.exports = ({ items }) => {
                 <div class="card">
                     <h5 class="card-header">Total</h5>
                     <div class="card-body">
-                        <p class="card-text">$</p>
+                        <p class="card-text">$${totalPrice}</p>
                         <button class="btn btn-success">Buy</button>
                     </div>
                 </div>
