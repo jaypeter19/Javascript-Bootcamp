@@ -11,9 +11,12 @@ module.exports = ({ products }) => {
                             <p class="card-text">$${product.price}</p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="#">
+                        <form action="/cart/products" method="POST">
+                            <input type="hidden" name="productId" value="${product.id}">
+                            <button type="submit" class="btn btn-link">
                                 <i class="bi bi-cart3"></i>Add to cart
-                            </a>
+                            </button>
+                        </form>
                         </div>
                     </div>
         </div>
@@ -22,15 +25,23 @@ module.exports = ({ products }) => {
 
     return layout({
         content: `
-    <div class="row justify-content-start align-items-start my-3">
-                <div class="col-sm-6">
-                    <h2>Featured Items</h2>
+    <section>
+            <div class="row justify-content-center align-items-center mt-4">
+                <div class="col-sm-12 banner w-100">
+                    <img src="/assets/banner.jpg" alt="Limited Time Offer - Order Today for $99" class="img-fluid w-100">
                 </div>
             </div>
-            <div class="row">
-             ${renderedProducts}
+    </section>
+    <section>
+        <div class="row justify-content-start align-items-start my-3">
+            <div class="col-sm-6">
+                <h2>Featured Items</h2>
             </div>
-    </div>
+            <div class="row">
+                ${renderedProducts}
+            </div>
+        </div>
+    </section>
     `
     })
 }

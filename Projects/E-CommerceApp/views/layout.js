@@ -49,19 +49,10 @@ module.exports = ({ content }) => {
             </div>
             <div class="col-sm-6 text-end">
                 <a href="/admin/products" class="btn btn-primary"><i class="bi bi-star-fill"></i>Products</a>
-                <a href="#" class="btn btn-primary"><i class="bi bi-cart3"></i>Cart</a>
+                <a href="/cart" class="btn btn-primary"><i class="bi bi-cart3"></i>Cart</a>
             </div>
         </div>
-        <section>
-            <div class="row justify-content-center align-items-center mt-4">
-                <div class="col-sm-12 banner w-100">
-                    <img src="/assets/banner.jpg" alt="Limited Time Offer - Order Today for $99" class="img-fluid w-100">
-                </div>
-            </div>
-        </section>
-        <section>
         ${content}
-        </section>
     </div>
     <!-- JS Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

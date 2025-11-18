@@ -37,6 +37,9 @@ ul.social li a {
 .bi{
     padding-right: 5px;
 }
+.btn-danger .bi {
+    padding: 0;
+}
 
 .form-text {
     color: var(--red);
@@ -56,13 +59,15 @@ th, tr, td {
     margin: 1rem auto;
 }
 
-.card-footer a {
+.card-footer button {
     text-decoration: none;
 }
 
 
-#cart h3 {
-    margin-top: 50px;
+.cart h3 {
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 1.5rem;
 }
 
 #cart .cart-item {
