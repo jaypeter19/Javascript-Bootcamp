@@ -5,7 +5,7 @@ module.exports = ({ products }) => {
     const renderedProducts = products.map((product) => {
         return `
         <tr>
-        <th scope="row">${product.title}Title</th>
+        <th scope="row">${product.title}</th>
         <td>${product.price}</td>
         <td>
             <a href="/admin/products/${product.id}/edit" class="btn btn-primary">
