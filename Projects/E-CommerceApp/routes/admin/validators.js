@@ -19,7 +19,7 @@ module.exports = {
             .isEmail()
             .withMessage('Must be a valid email')
             .custom(async (email) => {
-                const existingUser = await usersRepo.getOneBy({ email: email });
+                const existingUser = await usersRepo.getOneBy({ email });
 
                 if (existingUser) {
                     throw new Error('Email in use');
@@ -40,6 +40,7 @@ module.exports = {
                 if (password !== passwordConfirmation) {
                     throw new Error('Password must match. Please type again.')
                 }
+                return true;
             }),
     requireEmailExists:
         check('email')
