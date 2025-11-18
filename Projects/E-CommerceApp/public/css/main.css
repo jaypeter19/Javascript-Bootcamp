@@ -7,6 +7,33 @@ body {
     --red: #c4181e;
 }
 
+.navbar {
+    background-color: var(--primary);
+}
+
+.navbar .social {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul.social > li {
+    display: inline-block;
+}
+
+ul.social li{
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+ul.social li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.banner img {
+    object-fit: cover;
+}
+
 .bi{
     padding-right: 5px;
 }
@@ -21,55 +48,18 @@ th, tr, td {
     font-weight: normal;
 }
 
-.product-card figure {
-    text-align: center;
-    padding: 5px;
+.card {
+    height: 100%;
 }
 
-.navbar ul.social {
-    display: flex;
+.img-fluid {
+    margin: 1rem auto;
 }
 
-.navbar ul.social li {
-    margin-right: 20px;
+.card-footer a {
     text-decoration: none;
 }
 
-.navbar ul.social li a {
-    color: var(--white);
-}
-
-.banner {
-    margin: 50px;
-}
-
-.columns.products {
-    flex-wrap: wrap;
-}
-
-.card-footer-item i {
-    margin-right: 10px;
-}
-
-.navbar-bottom.navbar {
-    align-items: center;
-}
-
-.navbar-top.navbar {
-    background-color: var(--primary);
-}
-
-.navbar-buttons {
-    display: flex;
-}
-
-.navbar-top .container.navbar-container,
-.navbar-bottom .container.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 5%;
-    align-items: center;
-}
 
 #cart h3 {
     margin-top: 50px;
