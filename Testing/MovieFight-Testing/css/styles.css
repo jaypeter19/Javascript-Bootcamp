@@ -1,0 +1,43 @@
+header {
+    padding: 3rem 1rem;
+    background: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%);
+}
+
+.title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+.title .icon {
+    margin-left: 15px;
+}
+
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item-img {
+    height: 150px;
+    margin: 1rem;
+}
+
+#summary {
+    max-height: 500px;
+}
+
+.details h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.details p {
+    font-size: 1rem;
+}
+
+.results h4 {
+    font-size: 1rem;
+}
