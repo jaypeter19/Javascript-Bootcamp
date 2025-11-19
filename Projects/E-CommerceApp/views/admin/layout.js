@@ -24,6 +24,8 @@ module.exports = ({ content }) => {
             </div>
             <div class="col-sm-6 text-end">
                 <a href="/admin/products" class="btn btn-primary"><i class="bi bi-star-fill"></i>Products</a>
+                <a href="/admin/products/new" class="btn btn-primary"><i class="bi bi-bag-plus-fill"></i>New Product</a>
+                <a href="/signout" class="btn btn-secondary"><i class="bi bi-box-arrow-right"></i>Sign Out</a>
             </div>
         </div>
         <div class="row justify-content-center align-items-center mt-4">

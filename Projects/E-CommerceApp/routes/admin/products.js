@@ -26,7 +26,7 @@ router.post('/admin/products/new',
     requireAuth,
     upload.single('image'),
     [requireTitle, requirePrice],
-    handleErrors(productsNewTemplate),
+    handleErrors(productsNewTemplate), 
     async (req, res) => {
 
         const image = req.file.buffer.toString('base64');
@@ -41,7 +41,9 @@ router.post('/admin/products/new',
         res.redirect('admin/products');
     });
 
-router.get('/admin/products/:id/edit', requireAuth, async (req, res) => {
+router.get('/admin/products/:id/edit', 
+    requireAuth, 
+    async (req, res) => {
 
     const product = await productsRepo.getOne(req.params.id);
 
@@ -69,7 +71,7 @@ router.post('/admin/products/:id/edit',
         }
 
         try {
-            await update(req.params.id, changes)
+            await productsRepo.update(req.params.id, changes)
         } catch (error) {
             return res.send('Could not find item')
         }

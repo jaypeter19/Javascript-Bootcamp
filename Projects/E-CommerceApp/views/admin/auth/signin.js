@@ -3,7 +3,8 @@ const { getError } = require('../../helpers');
 
 module.exports = ({ errors }) => {
     return layout({
-        content: `
+        content: 
+        `
     <h2 class="mb-3">Sign In</h2>
                 <form method="POST">
                     <div class="mb-3">

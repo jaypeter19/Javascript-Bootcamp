@@ -1,9 +1,10 @@
 const layout = require('../layout');
+const { getError } = require('../../helpers');
 
-module.exports = ({product}) => {
+module.exports = ({ product, errors }) => {
     return layout({
-        content: 
-        `
+        content:
+            `
         <h2 class="mb-3">Edit Product</h2>
         <form method="POST" enctype="multipart/form-data">
             <div class="mb-3">

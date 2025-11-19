@@ -48,7 +48,7 @@ module.exports = ({ content }) => {
                 <h1>E-Commerce Shop</h1>
             </div>
             <div class="col-sm-6 text-end">
-                <a href="/admin/products" class="btn btn-primary"><i class="bi bi-star-fill"></i>Products</a>
+                <a href="/" class="btn btn-primary"><i class="bi bi-star-fill"></i>Products</a>
                 <a href="/cart" class="btn btn-primary"><i class="bi bi-cart3"></i>Cart</a>
             </div>
         </div>
