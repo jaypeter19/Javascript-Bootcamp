@@ -50,6 +50,7 @@ module.exports = ({ content }) => {
             <div class="col-sm-6 text-end">
                 <a href="/" class="btn btn-primary"><i class="bi bi-star-fill"></i>Products</a>
                 <a href="/cart" class="btn btn-primary"><i class="bi bi-cart3"></i>Cart</a>
+                <a href="/admin/products" class="btn btn-warning"><i class="bi bi-person-fill-lock"></i>Admin</a>
             </div>
         </div>
         ${content}

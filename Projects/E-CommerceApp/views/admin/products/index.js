@@ -42,6 +42,11 @@ module.exports = ({ products }) => {
                         </tbody>
                     </table>
         </div>
+        <div class="row justify-content-start">
+            <div class="col-sm-6">
+                <a href="/signout" class="btn btn-secondary"><i class="bi bi-box-arrow-right"></i>Sign Out</a>
+            </div>
+        </div>
     `
     });
 }
